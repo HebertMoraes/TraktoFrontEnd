@@ -7,6 +7,7 @@ import { LoginPageModule } from './login-page/login-page.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { OpeningPageModule } from './opening-page/opening-page.module';
+import { CoursewarePageModule } from './courseware-page/courseware-page.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { OpeningPageModule } from './opening-page/opening-page.module';
     AppRoutingModule, 
     LoginPageModule, 
     HttpClientModule, 
-    OpeningPageModule
+    OpeningPageModule, 
+    CoursewarePageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,5 +8,10 @@ import { Component, Input } from '@angular/core';
 export class HeaderComponent {
 
   @Input() colorBackground!: string;
-
+  @Input() colorOfElements!: string;
+  @Input() icon1Path!: string;
+  @Input() icon2Path!: string;
+  @Input() icon3Path!: string;
+  @Input() iconProfilePath!: string;
+  @Input() icon4Path!: string;
 }
