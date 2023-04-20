@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
@@ -29,8 +29,8 @@ export class UserService {
   }
 
   private setTokenLocalStorage(response: any): void {
-    const { type, token, _ } = response;
-    localStorage.setItem(environment.token, token)
+    const { firebase_token, access_token, refresh_token, can_authenticate } = response;
+    localStorage.setItem(environment.token, access_token)
   }
 
   private removerTokenLocalStorage(): void {

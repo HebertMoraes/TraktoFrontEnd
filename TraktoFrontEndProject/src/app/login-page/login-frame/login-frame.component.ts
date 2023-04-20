@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserService } from 'src/app/services/user.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-login-frame',
@@ -14,7 +14,7 @@ export class LoginFrameComponent {
 
   constructor(
     private router: Router,
-    private userService: UserService,
+    private authService: AuthenticationService,
     private formBuilder: FormBuilder) {
     this.formLogin = this.createFormLogin();
   }
@@ -35,7 +35,7 @@ export class LoginFrameComponent {
     const { email, password } = this.formLogin.value;
     this.formLogin.reset;
 
-    this.userService.signInWithEmailPassword(email, password).subscribe(
+    this.authService.signInWithEmailPassword(email, password).subscribe(
       res => {
         console.log(res);
         this.router.navigate(['abertura']);
