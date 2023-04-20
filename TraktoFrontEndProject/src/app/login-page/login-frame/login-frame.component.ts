@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,32 +10,39 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginFrameComponent {
 
+  formLogin!: FormGroup;
+
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
-    private userService: UserService) {
-
+    private userService: UserService,
+    private formBuilder: FormBuilder) {
+    this.formLogin = this.createFormLogin();
   }
 
   ngOnInit() {
 
   }
 
-  // async ngOnInit() {
-
-  //   this.form = this.formBuilder.group({
-  //     name: ['', Validators.required],
-  //     sigla: ['', Validators.required]
-  //   });
-  // }
+  public createFormLogin(): FormGroup {
+    return this.formBuilder.group({
+      email: ["", [Validators.required]],
+      password: ["", [Validators.required]]
+    })
+  }
 
   submitAuthentication() {
 
-    // this.userService.signInWithEmailPassword(this.form.value)
-    //   .subscribe(() => {
-    //     //this.alertService.success('Department added', { keepAfterRouteChange: true });
-    //     this.router.navigate(['../'], { relativeTo: this.route });
-    //   });
-  }
+    const { email, password } = this.formLogin.value;
+    this.formLogin.reset;
 
+    this.userService.signInWithEmailPassword(email, password).subscribe(
+      res => {
+        console.log(res);
+        this.router.navigate(['abertura']);
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
 }

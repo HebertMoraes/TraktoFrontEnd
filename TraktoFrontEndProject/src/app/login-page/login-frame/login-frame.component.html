@@ -4,12 +4,13 @@
         Olá, faça login em sua conta.
     </p>
 
-    <div class="header-text-box">E-mail</div>
-    <input class="text-box" type="text">
+    <form [formGroup]="formLogin">
+        <div class="header-text-box">E-mail</div>
+        <input type="text" class="text-box" formControlName="email">
 
-    <div class="header-text-box">Senha</div>
-    <input class="text-box" type="text">
+        <div class="header-text-box">Senha</div>
+        <input type="password" class="text-box" formControlName="password">
 
-    <button class="btn-login" (click)="submitAuthentication()">Entrar</button>
-
+        <button class="btn-login" (click)="submitAuthentication()">Entrar</button>
+    </form>
 </div>

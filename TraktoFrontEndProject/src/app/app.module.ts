@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginPageModule } from './login-page/login-page.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { OpeningPageModule } from './opening-page/opening-page.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule, 
     LoginPageModule, 
-    HttpClientModule
+    HttpClientModule, 
+    OpeningPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
