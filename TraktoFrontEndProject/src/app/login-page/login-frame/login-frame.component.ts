@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login-frame',
@@ -7,12 +9,32 @@ import { Component } from '@angular/core';
 })
 export class LoginFrameComponent {
 
-  ngOnInit() {
-    
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private userService: UserService) {
+
   }
 
-  startAuthentication(){
-    window.alert("alo teste");
+  ngOnInit() {
+
+  }
+
+  // async ngOnInit() {
+
+  //   this.form = this.formBuilder.group({
+  //     name: ['', Validators.required],
+  //     sigla: ['', Validators.required]
+  //   });
+  // }
+
+  submitAuthentication() {
+
+    // this.userService.signInWithEmailPassword(this.form.value)
+    //   .subscribe(() => {
+    //     //this.alertService.success('Department added', { keepAfterRouteChange: true });
+    //     this.router.navigate(['../'], { relativeTo: this.route });
+    //   });
   }
 
 }
