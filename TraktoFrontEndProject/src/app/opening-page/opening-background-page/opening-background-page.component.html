@@ -1,1 +1,31 @@
-<p>opening-background-page works!</p>
+<div class="opening-page d-flex flex-column">
+    <app-header [colorBackground]="'#252323'"></app-header>
+    <div class="background container-fluid flex-grow-1 d-flex justify-content-center">
+        <div class="d-flex align-self-center">
+            <app-module-content 
+                [circleBgPath]="'../../../assets/opening-page/bg-courseware.png'" 
+                [imageCenterPath]="'assets/opening-page/study-book-1.png'"
+                [textTittle]="'Material Didático'"
+                [colorDivisorTittle]="'#4173CD'">
+            </app-module-content>
+            <app-module-content 
+                [circleBgPath]="'../../../assets/opening-page/bg-quiz.png'" 
+                [imageCenterPath]="'assets/opening-page/medal.png'"
+                [textTittle]="'Quiz'"
+                [colorDivisorTittle]="'#1DC763'">
+            </app-module-content>
+            <app-module-content 
+                [circleBgPath]="'../../../assets/opening-page/bg-drawing.png'" 
+                [imageCenterPath]="'assets/opening-page/paint-1.png'"
+                [textTittle]="'Desenho'"
+                [colorDivisorTittle]="'#F6B5FF'">
+            </app-module-content>
+            <app-module-content 
+                [circleBgPath]="'../../../assets/opening-page/bg-youtube.png'" 
+                [imageCenterPath]="'assets/opening-page/badge-youtube.png'"
+                [textTittle]="'Youtube'"
+                [colorDivisorTittle]="'#FF0000'">
+            </app-module-content>
+        </div>
+    </div>
+</div>
