@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-module-content',
@@ -11,4 +11,6 @@ export class ModuleContentComponent {
   @Input() imageCenterPath!: string;
   @Input() textTittle!: string;
   @Input() colorDivisorTittle!: string;
+
+  @Output() clicked = new EventEmitter();
 }

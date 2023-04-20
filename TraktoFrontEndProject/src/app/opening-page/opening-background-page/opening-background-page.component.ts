@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-opening-background-page',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class OpeningBackgroundPageComponent {
 
+  constructor(private router: Router){
+
+  }
+
+  goToCoursewarePage(){
+    this.router.navigateByUrl('/materiais-didaticos');
+  }
 }

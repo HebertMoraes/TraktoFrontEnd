@@ -2,6 +2,7 @@
     <app-header 
         [colorBackground]="'#252323'" 
         [colorOfElements]="'#E4EBFB'" 
+        [enableChangeEnvironment]="false" 
         [icon1Path]="'assets/comum-assets/header/trakto-edu-logo-dark.svg'" 
         [icon2Path]="'assets/comum-assets/header/calendar-icon.svg'" 
         [icon3Path]="'assets/comum-assets/header/bell-icon.svg'" 
@@ -14,7 +15,8 @@
                 [circleBgPath]="'../../../assets/opening-page/bg-courseware.png'" 
                 [imageCenterPath]="'assets/opening-page/study-book-1.png'"
                 [textTittle]="'Material Didático'"
-                [colorDivisorTittle]="'#4173CD'">
+                [colorDivisorTittle]="'#4173CD'"
+                (clicked)="goToCoursewarePage();">
             </app-module-content>
             <app-module-content 
                 [circleBgPath]="'../../../assets/opening-page/bg-quiz.png'" 
