@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UserConfig } from './entities/user-config';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +7,4 @@ import { UserConfig } from './entities/user-config';
 })
 export class AppComponent {
   title = 'TraktoFrontEndProject';
-
-  userConfig!: UserConfig;
 }

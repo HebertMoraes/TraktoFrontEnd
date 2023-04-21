@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { map, catchError } from 'rxjs/operators'
 import { Observable } from 'rxjs'
 import { environment } from 'src/environments/environment';
-import { globalsVariables } from 'src/app/user-config-save';
-import { UserConfig } from '../entities/user-config';
 
 
 @Injectable({
