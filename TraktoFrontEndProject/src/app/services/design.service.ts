@@ -1,0 +1,17 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DesignService {
+
+  constructor() { }
+
+  getAllDesign() {
+
+  }
+
+  getSingleDesignById(id: string) {
+
+  }
+}

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { globalsVariables } from 'src/app/user-config-save';
 
 @Component({
   selector: 'app-login-frame',
@@ -35,14 +36,14 @@ export class LoginFrameComponent {
     const { email, password } = this.formLogin.value;
     this.formLogin.reset;
 
-    this.authService.signInWithEmailPassword(email, password).subscribe(
-      res => {
-        console.log(res);
+    this.authService.signInWithEmailPassword(email, password).subscribe({
+      next: () => {
+        // console.log(globalsVariables.iconProfileUrl);
         this.router.navigate(['abertura']);
-      },
-      err => {
+      }, 
+      error: (err) => {
         console.log(err);
       }
-    )
+    });
   }
 }

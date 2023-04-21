@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { map, catchError } from 'rxjs/operators'
 import { Observable } from 'rxjs'
 import { environment } from 'src/environments/environment';
+import { globalsVariables } from 'src/app/user-config-save';
+import { UserConfig } from '../entities/user-config';
 
 
 @Injectable({
@@ -14,26 +16,36 @@ export class AuthenticationService {
 
   signInWithEmailPassword(email: string, password: string): Observable<any> {
 
-    const url = environment.urlSignInEmailPassword
+    const url = environment.urlSignInEmailPassword;
+
     return this.http.post(url, { email, password }, { responseType: 'json' }).pipe(
-      map((data) => this.setTokenLocalStorage(data)),
+      map((dataResponse) => {
+        this.setTokenLocalStorage(dataResponse);
+        // this.saveUserConfig(dataResponse);
+      }),
       catchError((err) => {
         this.removerTokenLocalStorage();
-        throw 'Falha ao efetuar login.'
+        throw 'Falha ao efetuar login.';
       })
-    )
+    );
   };
 
   public getToken(): string | null {
-    return localStorage.getItem(environment.token);
+    return localStorage.getItem(environment.access_token);
   }
 
-  private setTokenLocalStorage(response: any): void {
-    const { firebase_token, access_token, refresh_token, can_authenticate } = response;
-    localStorage.setItem(environment.token, access_token)
+  private setTokenLocalStorage(dataResponse: any): void {
+    const { access_token, refresh_token, firebase_token } = dataResponse;
+    localStorage.setItem(environment.access_token, access_token)
   }
 
   private removerTokenLocalStorage(): void {
-    localStorage.removeItem(environment.token);
+    localStorage.removeItem(environment.access_token);
   }
+
+  // private saveUserConfig(dataResponse: any) {
+  //   var dataUserToSave:UserConfig = JSON.parse(dataResponse);
+  //   globalsVariables.iconProfileUrl = dataUserToSave.logo.url.medium.secure_url;
+  //   console.log()
+  // }
 }

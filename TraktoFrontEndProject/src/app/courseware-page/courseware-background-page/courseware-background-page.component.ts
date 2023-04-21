@@ -14,4 +14,8 @@ export class CoursewareBackgroundPageComponent {
   forwardOnWeeks(){
     console.log('teste2');
   }
+
+  testeRequisicao() {
+    console.log("ai para");
+  }
 }
