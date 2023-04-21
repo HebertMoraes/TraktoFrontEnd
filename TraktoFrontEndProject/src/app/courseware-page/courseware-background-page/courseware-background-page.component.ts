@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class CoursewareBackgroundPageComponent {
 
+  backOnWeeks(){
+    console.log('teste1');
+  }
+
+  forwardOnWeeks(){
+    console.log('teste2');
+  }
 }

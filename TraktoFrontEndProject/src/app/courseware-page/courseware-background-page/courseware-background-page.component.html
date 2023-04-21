@@ -12,20 +12,15 @@
         <img src="assets/courseware-page/header-courseware.jpg" alt="">
     </section>
 
-    <div class="content-courseware">
-        <div class="details-courseware d-flex">
-            <div class="navigate-content d-grid">
-                <div class="weeks-navigate d-flex">
-                    <div style="width: 40px; height: 40px; background-color: rgb(24, 24, 80);"></div>
-                    <div style="width: 40px; height: 40px; background-color: rgb(89, 89, 165);"></div>
-                </div>
-                <span class="tittle-content">Material Didático</span>
-                <span class="sub-tittle-content">Acesse suas últimas apresentações de aula</span>
-            </div>
-            <div class="see-all-content">
-                <div class="ms-auto" style="width: 40px; height: 40px; background-color: brown;"></div>
-            </div>
-        </div>
-    </div>
+    <app-content-carrousel
+        [weeksTxt]="'Semana 06/02 até 28/02'" 
+        [tittleTxt]="'Material didático'" 
+        [subTittleTxt]="'acesse suas últimas apresentações de aula.'" 
+        [btnRightTxt]="'Ver todo conteúdo'" 
+        [btnRightColor]="'#4743FF'" 
+        [btnRightColorTxt]="'#4743FF'" 
+        [btnRightIconPath]="'assets/courseware-page/icon-youtube.svg'">
+    </app-content-carrousel>
+
     <div class="content-courseware">b</div>
 </div>

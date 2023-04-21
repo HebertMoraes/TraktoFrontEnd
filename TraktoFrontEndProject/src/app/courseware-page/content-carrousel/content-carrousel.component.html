@@ -1,0 +1,39 @@
+<div class="content-courseware">
+    <div class="details-courseware d-flex">
+        <div class="navigate-content d-grid">
+            <div class="weeks-navigate d-flex align-items-center">
+                <div class="weeks">
+                    <span>{{weeksTxt}}</span>
+                </div>
+                <div class="arrow-left-weeks d-flex justify-content-center align-items-center"
+                    (click)="backOnWeeks()">
+                    <img src="assets/courseware-page/icon-arrow-left.svg" alt="">
+                </div>
+                <div class="arrow-right-weeks d-flex justify-content-center align-items-center"
+                    (click)="forwardOnWeeks()">
+                    <img src="assets/courseware-page/icon-arrow-right.svg" alt="">
+                </div>
+            </div>
+            <span class="tittle-content">{{tittleTxt}}</span>
+            <span class="sub-tittle-content">{{subTittleTxt}}</span>
+        </div>
+        <div class="block-right-content">
+            <div class="button-right ms-auto d-flex align-items-center justify-content-end"
+            [ngStyle]="{'border-color': btnRightColor}">
+                <img *ngIf="btnRightIconPath" src="{{btnRightIconPath}}" class="icon-btn-right" alt="">
+                <button class="d-flex align-items-center" 
+                [ngStyle]="{'color': btnRightColorTxt}">
+                    {{btnRightTxt}}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="carrousel-content d-flex">
+        <div style="width: 500px; height: 100px; background-color: brown;">teste</div>
+        <div style="width: 500px; height: 100px; background-color: rgb(25, 70, 138);">teste</div>
+        <div style="width: 500px; height: 100px; background-color: brown;">teste</div>
+        <div style="width: 500px; height: 100px; background-color: rgb(25, 70, 138);">teste</div>
+        <div style="width: 500px; height: 100px; background-color: brown;">teste</div>
+        <div style="width: 500px; height: 100px; background-color: rgb(25, 70, 138);">teste</div>
+    </div>
+</div>
