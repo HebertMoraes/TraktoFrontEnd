@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DesignData } from 'src/app/entities/design-data';
 import { DesignService } from 'src/app/services/design.service';
 
 @Component({
@@ -8,23 +9,33 @@ import { DesignService } from 'src/app/services/design.service';
 })
 export class CoursewareBackgroundPageComponent {
 
+  designsThumbsToShow!: DesignData[];
+  showTest = false;
+
   constructor(private designService: DesignService) {
 
   }
 
+  ngOnInit() {
+    this.getAllDesignThumbs();
+  }
+
+  ngAfterViewInit() {
+    // this.getAllDesignThumbs();
+  }
+
   backOnWeeks(){
-    console.log('teste1');
+    console.log('voltando');
   }
 
   forwardOnWeeks(){
-    console.log('teste2');
+    console.log('prosseguindo');
   }
 
-  testeRequisicao() {
-
+  getAllDesignThumbs() {
     this.designService.getAllDesign().subscribe({
       next: (res) => {
-        console.log(res);
+        this.designsThumbsToShow = res.data;
       },
       error: (err) => {
         console.log(err);

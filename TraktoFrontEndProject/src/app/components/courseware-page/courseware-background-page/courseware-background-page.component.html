@@ -21,12 +21,11 @@
         [btnRightColorTxt]="'#4743FF'" 
         [btnRightIconPath]="''">
 
-        <div style="width: 500px; height: 100px; background-color: brown;">teste</div>
-        <div style="width: 500px; height: 100px; background-color: rgb(25, 70, 138);">teste</div>
-        <div style="width: 500px; height: 100px; background-color: brown;">teste</div>
-        <div style="width: 500px; height: 100px; background-color: rgb(25, 70, 138);">teste</div>
-        <div style="width: 500px; height: 100px; background-color: brown;">teste</div>
-        <div style="width: 500px; height: 100px; background-color: rgb(25, 70, 138);">teste</div>
+        <app-design-thumb *ngFor="let design of designsThumbsToShow"
+            [tittle]="design.title"
+            [urlImgThumb]="design.thumbs.low"
+            [numberSlides]="3">
+        </app-design-thumb>
 
     </app-content-carrousel>
 
@@ -47,8 +46,4 @@
         <div style="width: 500px; height: 100px; background-color: rgb(138, 123, 25);">teste</div>
 
     </app-content-carrousel>
-
-    <button (click)="testeRequisicao()">
-        alooo
-    </button>
 </div>
