@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DesignData } from 'src/app/entities/design-data';
 import { DesignService } from 'src/app/services/design.service';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-courseware-background-page',
@@ -10,7 +11,6 @@ import { DesignService } from 'src/app/services/design.service';
 export class CoursewareBackgroundPageComponent {
 
   designsThumbsToShow!: DesignData[];
-  showTest = false;
 
   constructor(private designService: DesignService) {
 
@@ -41,5 +41,9 @@ export class CoursewareBackgroundPageComponent {
         console.log(err);
       }
     });
+  }
+
+  goToEditDesign(idDesign: string) {
+    window.open(environment.urlEditDesign + idDesign, "_blank");
   }
 }

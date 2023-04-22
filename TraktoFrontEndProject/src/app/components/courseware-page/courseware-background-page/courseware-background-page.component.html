@@ -27,7 +27,9 @@
         <app-design-thumb *ngFor="let design of designsThumbsToShow" 
             [tittle]="design.title"
             [urlImgThumb]="design.thumbs.low" 
-            [numberSlides]="3">
+            [numberSlides]="3" 
+            [idDesign]="design.id"
+            (goToEdit)="goToEditDesign($event)" >
         </app-design-thumb>
 
     </app-content-carrousel>
@@ -43,34 +45,40 @@
 
         <div class="d-flex">
             <div class="yt-video-player">
-                <iframe width="310" height="175" src="https://www.youtube.com/embed/nmHDcrXw-Vc"
+                <iframe width="295" height="175" src="https://www.youtube.com/embed/nmHDcrXw-Vc" 
                     title="Escola São João Batista é inaugurada no povoado Prosperidade" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture; web-share" allowfullscreen>
                 </iframe>
             </div>
             <div class="yt-video-player">
-                <iframe width="310" height="175" src="https://www.youtube.com/embed/iKDeEZckPkQ" 
+                <iframe width="295" height="175" src="https://www.youtube.com/embed/iKDeEZckPkQ" 
                     title="Prefeitura de Penedo conscientiza população para manter a cidade limpa" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture; web-share" allowfullscreen>
                 </iframe>
             </div>
             <div class="yt-video-player">
-                <iframe width="310" height="175" src="https://www.youtube.com/embed/XSwySd54TYM" 
+                <iframe width="295" height="175" src="https://www.youtube.com/embed/XSwySd54TYM" 
                     title="Primeira Escola Integral inicia atividades em Penedo" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture; web-share" allowfullscreen>
                 </iframe>
             </div>
             <div class="yt-video-player">
-                <iframe width="310" height="175" src="https://www.youtube.com/embed/EeZfhuVKuUw" 
+                <iframe width="295" height="175" src="https://www.youtube.com/embed/EeZfhuVKuUw" 
                     title="SMTT Penedo realiza blitz educativa para conscientizar condutores" 
                     frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                     gyroscope; picture-in-picture; web-share" allowfullscreen>
                 </iframe>
             </div>
+            <div class="yt-video-player">
+                <iframe width="295" height="175" src="https://www.youtube.com/embed/WIy_R6KU8Ss" 
+                    title="CREAS Penedo leva informações e rede de cuidados para escolas municipais" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                    gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+            </div>
         </div>
-
     </app-content-carrousel>
 </div>

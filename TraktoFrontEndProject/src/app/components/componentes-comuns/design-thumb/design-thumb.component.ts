@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-design-thumb',
@@ -10,4 +10,7 @@ export class DesignThumbComponent {
   @Input() tittle!: string;
   @Input() urlImgThumb!: string;
   @Input() numberSlides!: number;
+  @Input() idDesign!: string;
+
+  @Output() goToEdit: EventEmitter<string> = new EventEmitter<string>();
 }
