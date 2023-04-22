@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DesignData } from 'src/app/entities/design-data';
 import { DesignService } from 'src/app/services/design.service';
 import { environment } from 'src/environments/environment.development';
@@ -12,7 +13,9 @@ export class CoursewareBackgroundPageComponent {
 
   designsThumbsToShow!: DesignData[];
 
-  constructor(private designService: DesignService) {
+  constructor(
+    private designService: DesignService,
+    private router: Router) {
 
   }
 
@@ -33,7 +36,7 @@ export class CoursewareBackgroundPageComponent {
   }
 
   getAllDesignThumbs() {
-    this.designService.getAllDesign().subscribe({
+    this.designService.getAllDesign(10, "created_at", "desc").subscribe({
       next: (res) => {
         this.designsThumbsToShow = res.data;
       },
@@ -45,5 +48,13 @@ export class CoursewareBackgroundPageComponent {
 
   goToEditDesign(idDesign: string) {
     window.open(environment.urlEditDesign + idDesign, "_blank");
+  }
+
+  goToSeeAllDesign(){
+    this.router.navigate(['ver-todos-materiais']);
+  }
+
+  goToYtChannel() {
+    window.open("https://www.youtube.com/@PrefeituradePenedo", "_blank");
   }
 }

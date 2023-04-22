@@ -9,6 +9,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { OpeningPageModule } from './components/opening-page/opening-page.module';
 import { CoursewarePageModule } from './components/courseware-page/courseware-page.module';
 import { AuthInterceptor } from './security/auth.interceptor';
+import { AllDesignModule } from './components/all-design/all-design.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthInterceptor } from './security/auth.interceptor';
     LoginPageModule, 
     HttpClientModule, 
     OpeningPageModule, 
-    CoursewarePageModule
+    CoursewarePageModule, 
+    AllDesignModule
   ],
   providers: [
     {

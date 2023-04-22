@@ -14,11 +14,24 @@ export class DesignService {
 
    }
 
-  getAllDesign() {
+  getAllDesign(
+    totalPerPage?: number, 
+    orderBy?: 'title' | 'created_at', 
+    orderOrientation?: string) {
 
-    const url = environment.urlGetAllDesign;
+    //?total_per_page=10&order_by=title&order_orientation=desc
+    var urlToSend = environment.urlGetAllDesign + "?";
+    if(totalPerPage) {
+      urlToSend += "total_per_page=" + totalPerPage;
+    }
+    if(orderBy) {
+      urlToSend += "&order_by=" + orderBy;
+    }
+    if(orderOrientation) {
+      urlToSend += "&order_orientation=" + orderOrientation;
+    }
 
-    return this.http.get<AllDesignData>(url, { responseType: 'json' }).pipe(
+    return this.http.get<AllDesignData>(urlToSend, { responseType: 'json' }).pipe(
       catchError((err) => {
         throw 'Ops algo deu errado';
       })

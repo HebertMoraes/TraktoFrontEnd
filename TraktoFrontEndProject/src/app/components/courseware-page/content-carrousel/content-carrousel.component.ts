@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-content-carrousel',
@@ -14,6 +14,8 @@ export class ContentCarrouselComponent {
   @Input() btnRightColor!: string;
   @Input() btnRightColorTxt!: string;
   @Input() btnRightIconPath!: string;
+  
+  @Output() clickedBtnRight = new EventEmitter();
 
   backOnWeeks(){
     console.log('teste1');

@@ -19,7 +19,8 @@
         </div>
         <div class="block-right-content d-flex justify-content-end">
             <div class="d-flex align-items-center mb-auto">
-                <div class="button-right d-flex" [ngStyle]="{'border-color': btnRightColor}">
+                <div class="button-right d-flex" [ngStyle]="{'border-color': btnRightColor}"
+                (click)="clickedBtnRight.emit()">
                     <img *ngIf="btnRightIconPath" src="{{btnRightIconPath}}" class="icon-btn-right" alt="">
                     <div class="btn-txt d-flex align-items-center" [ngStyle]="{'color': btnRightColorTxt}">
                         {{btnRightTxt}}

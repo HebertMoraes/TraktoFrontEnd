@@ -22,13 +22,15 @@
         [btnRightTxt]="'Ver todo conteúdo'"
         [btnRightColor]="'#4743FF'" 
         [btnRightColorTxt]="'#4743FF'" 
-        [btnRightIconPath]="''">
+        [btnRightIconPath]="''" 
+        (clickedBtnRight)="goToSeeAllDesign()">
 
         <app-design-thumb *ngFor="let design of designsThumbsToShow" 
             [tittle]="design.title"
             [urlImgThumb]="design.thumbs.low" 
-            [numberSlides]="3" 
-            [idDesign]="design.id"
+            [numberSlides]="design.pages" 
+            [idDesign]="design.id" 
+            [widthComponent]="'295px'"
             (goToEdit)="goToEditDesign($event)" >
         </app-design-thumb>
 
@@ -41,7 +43,8 @@
         [btnRightTxt]="'Abrir no Youtube'" 
         [btnRightColor]="'#FF0100'" 
         [btnRightColorTxt]="'#FF0100'"
-        [btnRightIconPath]="'assets/courseware-page/icon-youtube.svg'">
+        [btnRightIconPath]="'assets/courseware-page/icon-youtube.svg'"
+        (clickedBtnRight)="goToYtChannel()">
 
         <div class="d-flex">
             <div class="yt-video-player">
