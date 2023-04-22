@@ -17,9 +17,6 @@ export class DesignService {
     const url = environment.urlGetAllDesign;
 
     return this.http.get(url, { responseType: 'json' }).pipe(
-      map((dataResponse) => {
-        console.log(dataResponse);
-      }),
       catchError((err) => {
         console.log("queijo");
         throw 'Ops algo deu errado';

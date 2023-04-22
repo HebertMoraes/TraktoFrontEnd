@@ -23,8 +23,8 @@ export class CoursewareBackgroundPageComponent {
   testeRequisicao() {
 
     this.designService.getAllDesign().subscribe({
-      complete: () => {
-        console.log("foi");
+      next: (res) => {
+        console.log(res);
       },
       error: (err) => {
         console.log(err);
