@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -12,8 +13,18 @@ export class DesignService {
    }
 
   getAllDesign() {
+
     const url = environment.urlGetAllDesign;
-    
+
+    return this.http.get(url, { responseType: 'json' }).pipe(
+      map((dataResponse) => {
+        console.log(dataResponse);
+      }),
+      catchError((err) => {
+        console.log("queijo");
+        throw 'Ops algo deu errado';
+      })
+    )
   }
 
   getSingleDesignById(id: string) {

@@ -36,10 +36,9 @@ export class LoginFrameComponent {
     this.formLogin.reset;
 
     this.authService.signInWithEmailPassword(email, password).subscribe({
-      next: () => {
-        // console.log(globalsVariables.iconProfileUrl);
+      complete: () => {
         this.router.navigate(['abertura']);
-      }, 
+      },
       error: (err) => {
         console.log(err);
       }

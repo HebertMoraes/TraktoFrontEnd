@@ -19,7 +19,6 @@ export class AuthenticationService {
     return this.http.post(url, { email, password }, { responseType: 'json' }).pipe(
       map((dataResponse) => {
         this.setTokenLocalStorage(dataResponse);
-        // this.saveUserConfig(dataResponse);
       }),
       catchError((err) => {
         this.removerTokenLocalStorage();
@@ -40,10 +39,4 @@ export class AuthenticationService {
   private removerTokenLocalStorage(): void {
     localStorage.removeItem(environment.access_token);
   }
-
-  // private saveUserConfig(dataResponse: any) {
-  //   var dataUserToSave:UserConfig = JSON.parse(dataResponse);
-  //   globalsVariables.iconProfileUrl = dataUserToSave.logo.url.medium.secure_url;
-  //   console.log()
-  // }
 }

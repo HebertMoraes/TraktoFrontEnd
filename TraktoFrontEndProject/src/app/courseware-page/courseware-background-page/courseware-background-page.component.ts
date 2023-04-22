@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DesignService } from 'src/app/services/design.service';
 
 @Component({
   selector: 'app-courseware-background-page',
@@ -6,6 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./courseware-background-page.component.sass']
 })
 export class CoursewareBackgroundPageComponent {
+
+  constructor(private designService: DesignService) {
+
+  }
 
   backOnWeeks(){
     console.log('teste1');
@@ -16,6 +21,14 @@ export class CoursewareBackgroundPageComponent {
   }
 
   testeRequisicao() {
-    console.log("ai para");
+
+    this.designService.getAllDesign().subscribe({
+      complete: () => {
+        console.log("foi");
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
   }
 }
