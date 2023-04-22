@@ -1,4 +1,7 @@
-<app-header [colorBackground]="'#FFFFFF'" [colorOfElements]="'#7183A6'" [enableChangeEnvironment]="true"
+<app-header 
+    [colorBackground]="'#FFFFFF'" 
+    [colorOfElements]="'#7183A6'" 
+    [enableChangeEnvironment]="true"
     [iconChangeEnvironmentPath]="'assets/comum-assets/header/icon-changeEnvironment.svg'"
     [icon1Path]="'assets/comum-assets/header/trakto-edu-logo-dark.svg'"
     [icon2Path]="'assets/comum-assets/header/calendar-icon-gray.svg'"
@@ -12,38 +15,62 @@
         <img src="assets/courseware-page/header-courseware.jpg" alt="">
     </section>
 
-    <app-content-carrousel
+    <app-content-carrousel 
         [weeksTxt]="'Semana 06/02 até 28/02'" 
-        [tittleTxt]="'Material didático'" 
+        [tittleTxt]="'Material didático'"
         [subTittleTxt]="'acesse suas últimas apresentações de aula.'" 
-        [btnRightTxt]="'Ver todo conteúdo'" 
+        [btnRightTxt]="'Ver todo conteúdo'"
         [btnRightColor]="'#4743FF'" 
         [btnRightColorTxt]="'#4743FF'" 
         [btnRightIconPath]="''">
 
-        <app-design-thumb *ngFor="let design of designsThumbsToShow"
+        <app-design-thumb *ngFor="let design of designsThumbsToShow" 
             [tittle]="design.title"
-            [urlImgThumb]="design.thumbs.low"
+            [urlImgThumb]="design.thumbs.low" 
             [numberSlides]="3">
         </app-design-thumb>
 
     </app-content-carrousel>
 
-    <app-content-carrousel
+    <app-content-carrousel 
         [weeksTxt]="'Semana 06/02 até 28/02'" 
-        [tittleTxt]="'Vídeo aulas'" 
-        [subTittleTxt]="'Complete os estudos assistindo o conteúdo de forma dinâmica.'" 
+        [tittleTxt]="'Vídeo aulas'"
+        [subTittleTxt]="'Complete os estudos assistindo o conteúdo de forma dinâmica.'"
         [btnRightTxt]="'Abrir no Youtube'" 
         [btnRightColor]="'#FF0100'" 
-        [btnRightColorTxt]="'#FF0100'" 
+        [btnRightColorTxt]="'#FF0100'"
         [btnRightIconPath]="'assets/courseware-page/icon-youtube.svg'">
 
-        <div style="width: 500px; height: 100px; background-color: rgb(15, 105, 57);">teste</div>
-        <div style="width: 500px; height: 100px; background-color: rgb(138, 123, 25);">teste</div>
-        <div style="width: 500px; height: 100px; background-color: rgb(15, 105, 57);">teste</div>
-        <div style="width: 500px; height: 100px; background-color: rgb(138, 123, 25);">teste</div>
-        <div style="width: 500px; height: 100px; background-color: rgb(15, 105, 57);">teste</div>
-        <div style="width: 500px; height: 100px; background-color: rgb(138, 123, 25);">teste</div>
+        <div class="d-flex">
+            <div class="yt-video-player">
+                <iframe width="310" height="175" src="https://www.youtube.com/embed/nmHDcrXw-Vc"
+                    title="Escola São João Batista é inaugurada no povoado Prosperidade" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                    gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="yt-video-player">
+                <iframe width="310" height="175" src="https://www.youtube.com/embed/iKDeEZckPkQ" 
+                    title="Prefeitura de Penedo conscientiza população para manter a cidade limpa" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                    gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="yt-video-player">
+                <iframe width="310" height="175" src="https://www.youtube.com/embed/XSwySd54TYM" 
+                    title="Primeira Escola Integral inicia atividades em Penedo" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                    gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="yt-video-player">
+                <iframe width="310" height="175" src="https://www.youtube.com/embed/EeZfhuVKuUw" 
+                    title="SMTT Penedo realiza blitz educativa para conscientizar condutores" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                    gyroscope; picture-in-picture; web-share" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
 
     </app-content-carrousel>
 </div>

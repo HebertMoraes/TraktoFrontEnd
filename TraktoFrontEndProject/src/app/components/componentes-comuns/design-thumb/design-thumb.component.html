@@ -1,6 +1,8 @@
 <div class="design d-grid">
-    <div class="design-thumb" [ngStyle]="{'background-image': 'url(' + urlImgThumb + ')'}">
-        
+    <div class="design-thumb d-flex" [ngStyle]="{'background-image': 'url(' + urlImgThumb + ')'}">
+        <div class="number-slides mt-auto text-center">
+            {{numberSlides}} Slides
+        </div>
     </div>
     <div class="design-tittle">{{tittle}}</div>
 </div>
