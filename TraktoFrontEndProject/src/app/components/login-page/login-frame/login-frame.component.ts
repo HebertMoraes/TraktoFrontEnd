@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-login-frame',
@@ -15,7 +16,9 @@ export class LoginFrameComponent {
   constructor(
     private router: Router,
     private authService: AuthenticationService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder, 
+    private toastr: ToastrService) {
+
     this.formLogin = this.createFormLogin();
   }
 
@@ -25,7 +28,7 @@ export class LoginFrameComponent {
 
   public createFormLogin(): FormGroup {
     return this.formBuilder.group({
-      email: ["", [Validators.required]],
+      email: ["", [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       password: ["", [Validators.required]]
     })
   }
@@ -40,6 +43,7 @@ export class LoginFrameComponent {
         this.router.navigate(['abertura']);
       },
       error: (err) => {
+        this.toastr.error("Verifique seu login.")
         console.log(err);
       }
     });

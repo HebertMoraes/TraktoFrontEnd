@@ -6,11 +6,13 @@
 
     <form [formGroup]="formLogin">
         <div class="header-text-box">E-mail</div>
-        <input type="text" class="text-box" formControlName="email">
+        <input type="email" class="text-box" formControlName="email">
 
         <div class="header-text-box">Senha</div>
         <input type="password" class="text-box" formControlName="password">
 
-        <button class="btn-login" (click)="submitAuthentication()">Entrar</button>
+        <button class="btn-login" [disabled]="!formLogin.valid" (click)="submitAuthentication()">
+            Entrar
+        </button>
     </form>
 </div>

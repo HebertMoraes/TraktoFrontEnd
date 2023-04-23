@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './security/auth.guard';
 
 // const routes: Routes = [
 //   { path: 'login', component: LoginBackgroundPageComponent },
@@ -19,17 +20,20 @@ const routes: Routes = [
   { 
     path: 'abertura',
     loadChildren: () => import('./components/opening-page/opening-page.module')
-      .then(m => m.OpeningPageModule)
+      .then(m => m.OpeningPageModule), 
+    canActivate: [AuthGuard]
   }, 
   { 
     path: 'materiais-didaticos',
     loadChildren: () => import('./components/courseware-page/courseware-page.module')
-      .then(m => m.CoursewarePageModule)
+      .then(m => m.CoursewarePageModule), 
+    canActivate: [AuthGuard]
   }, 
   { 
     path: 'ver-todos-materiais',
     loadChildren: () => import('./components/all-design-page/all-design-page.module')
-      .then(m => m.AllDesignPageModule)
+      .then(m => m.AllDesignPageModule), 
+    canActivate: [AuthGuard]
   }, 
   { path: '**', redirectTo: 'login' }
 ];
