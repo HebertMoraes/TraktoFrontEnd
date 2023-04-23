@@ -5,12 +5,10 @@
                 <div class="weeks">
                     <span>{{weeksTxt}}</span>
                 </div>
-                <div class="arrow-left-weeks d-flex justify-content-center align-items-center" 
-                (click)="backOnWeeks()">
+                <div class="arrow-left-weeks d-flex justify-content-center align-items-center">
                     <img src="assets/courseware-page/icon-arrow-left.svg" alt="">
                 </div>
-                <div class="arrow-right-weeks d-flex justify-content-center align-items-center"
-                (click)="forwardOnWeeks()">
+                <div class="arrow-right-weeks d-flex justify-content-center align-items-center">
                     <img src="assets/courseware-page/icon-arrow-right.svg" alt="">
                 </div>
             </div>
@@ -30,9 +28,26 @@
         </div>
 
     </div>
-    <div class="holder-scroll-content" #scrollHorizontal>
-        <div class="scroll-content d-flex">
+    <div class="holder-scroll-content">
+        <div class="d-flex">
+            <div class="scroll-to-left" 
+                (mouseenter)="scrollToLeft()" (mouseleave)="stopScroll()">
+            </div>
+            <div class="scroll-to-left" style="left: 335px"
+                (mouseenter)="scrollToLeft()" (mouseleave)="stopScroll()">
+            </div>
+
+            <div class="scroll-to-right" style="right: 45px"
+                (mouseenter)="scrollToRight()" (mouseleave)="stopScroll()">
+            </div>
+            <div class="scroll-to-right" style="right: 240px"
+                (mouseenter)="scrollToRight()" (mouseleave)="stopScroll()">
+            </div>
+        </div>
+        
+        <div class="scroll-content" #slidesScroll>
             <ng-content></ng-content>
         </div>
+        
     </div>
 </div>

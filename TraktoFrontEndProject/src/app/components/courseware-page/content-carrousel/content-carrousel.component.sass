@@ -72,4 +72,22 @@
     .holder-scroll-content
         overflow: hidden
 
-        // .scroll-content
+        .scroll-to-left
+            width: 200px
+            height: 272px
+            background-color: transparent
+            position: absolute
+            z-index: 2
+
+        .scroll-content
+            transition: transform 1s
+            transform: translateX(0)
+            display: flex
+
+        .scroll-to-right
+            width: 200px
+            height: 272px
+            background-color: transparent
+            position: absolute
+            // right: 0px
+            z-index: 2

@@ -23,6 +23,7 @@
         [btnRightColor]="'#4743FF'" 
         [btnRightColorTxt]="'#4743FF'" 
         [btnRightIconPath]="''" 
+        [maxScrollCarrousel]="-140"
         (clickedBtnRight)="goToSeeAllDesign()">
 
         <app-design-thumb *ngFor="let design of designsThumbsToShow" 
@@ -43,7 +44,8 @@
         [btnRightTxt]="'Abrir no Youtube'" 
         [btnRightColor]="'#FF0100'" 
         [btnRightColorTxt]="'#FF0100'"
-        [btnRightIconPath]="'assets/courseware-page/icon-youtube.svg'"
+        [btnRightIconPath]="'assets/courseware-page/icon-youtube.svg'" 
+        [maxScrollCarrousel]="-1"
         (clickedBtnRight)="goToYtChannel()">
 
         <div class="d-flex">

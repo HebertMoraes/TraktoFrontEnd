@@ -14,16 +14,40 @@ export class ContentCarrouselComponent {
   @Input() btnRightColor!: string;
   @Input() btnRightColorTxt!: string;
   @Input() btnRightIconPath!: string;
+  @Input() maxScrollCarrousel!: number;
   
   @Output() clickedBtnRight = new EventEmitter();
 
-  @ViewChild('scrollHorizontal') scrollHorizontal!: ElementRef;
+  @ViewChild('slidesScroll') slidesScroll!: ElementRef;
 
-  backOnWeeks(){
-    this.scrollHorizontal.nativeElement.scrollLeft -= 100;
+  currentPosCarrousel: number = 0;
+  distanceCarrouselMov: number = 50;
+  carrouselMoving: boolean = false;
+
+  ngOnInit() {
+
   }
 
-  forwardOnWeeks(){
-    this.scrollHorizontal.nativeElement.scrollLeft += 100;
+  scrollToLeft() {
+    this.carrouselMoving = true;
+    this.slidesScroll.nativeElement.style.transition = "transform 1s";
+		if (this.currentPosCarrousel < 0) {
+			this.currentPosCarrousel += this.distanceCarrouselMov;
+			this.slidesScroll.nativeElement.style.transform = `translateX(${this.currentPosCarrousel}%)`;
+		}
   }
+
+  scrollToRight() {
+    this.carrouselMoving = true;
+    this.slidesScroll.nativeElement.style.transition = "transform 1s";
+		if (this.currentPosCarrousel > this.maxScrollCarrousel) {
+			this.currentPosCarrousel -= this.distanceCarrouselMov;
+			this.slidesScroll.nativeElement.style.transform = `translateX(${this.currentPosCarrousel}%)`;
+		}
+  }
+
+  stopScroll() {
+    this.carrouselMoving = false;
+  }
+
 }
