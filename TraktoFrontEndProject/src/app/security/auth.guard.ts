@@ -18,15 +18,11 @@ export class AuthGuard implements CanActivate {
 
     const token = this.authService.getToken();
 
-    //se nao exitir token
-    //se o usuario nao possuir a permissao  
     if (token === null) {
-      this.route.navigate(['login'])
+      this.route.navigate(['login']);
       return false;
     }
 
     return true;
-
   }
-
 }

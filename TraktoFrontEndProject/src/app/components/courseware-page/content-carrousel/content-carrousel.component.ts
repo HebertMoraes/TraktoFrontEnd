@@ -49,5 +49,4 @@ export class ContentCarrouselComponent {
   stopScroll() {
     this.carrouselMoving = false;
   }
-
 }

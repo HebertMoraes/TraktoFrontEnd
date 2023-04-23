@@ -43,8 +43,7 @@ export class LoginFrameComponent {
         this.router.navigate(['abertura']);
       },
       error: (err) => {
-        this.toastr.error("Verifique seu login.")
-        console.log(err);
+        this.toastr.error("Verifique seu login.");
       }
     });
   }
