@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-content-carrousel',
@@ -17,11 +17,13 @@ export class ContentCarrouselComponent {
   
   @Output() clickedBtnRight = new EventEmitter();
 
+  @ViewChild('scrollHorizontal') scrollHorizontal!: ElementRef;
+
   backOnWeeks(){
-    console.log('teste1');
+    this.scrollHorizontal.nativeElement.scrollLeft -= 100;
   }
 
   forwardOnWeeks(){
-    console.log('teste2');
+    this.scrollHorizontal.nativeElement.scrollLeft += 100;
   }
 }

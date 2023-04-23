@@ -1,16 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginBackgroundPageComponent } from './components/login-page/login-background-page/login-background-page.component';
-import { OpeningBackgroundPageComponent } from './components/opening-page/opening-background-page/opening-background-page.component';
-import { CoursewareBackgroundPageComponent } from './components/courseware-page/courseware-background-page/courseware-background-page.component';
-import { AllDesignBackgroundPageComponent } from './components/all-design/all-design-background-page/all-design-background-page.component';
+
+// const routes: Routes = [
+//   { path: 'login', component: LoginBackgroundPageComponent },
+//   { path: 'abertura', component: OpeningBackgroundPageComponent},
+//   { path: 'materiais-didaticos', component: CoursewareBackgroundPageComponent},
+//   { path: 'ver-todos-materiais', component: AllDesignBackgroundPageComponent},
+  
+//   { path: '**', redirectTo: 'login' }
+// ];
 
 const routes: Routes = [
-  { path: 'login', component: LoginBackgroundPageComponent },
-  { path: 'abertura', component: OpeningBackgroundPageComponent},
-  { path: 'materiais-didaticos', component: CoursewareBackgroundPageComponent},
-  { path: 'ver-todos-materiais', component: AllDesignBackgroundPageComponent},
-  
+  { 
+    path: 'login',
+    loadChildren: () => import('./components/login-page/login-page.module')
+      .then(m => m.LoginPageModule)
+  }, 
+  { 
+    path: 'abertura',
+    loadChildren: () => import('./components/opening-page/opening-page.module')
+      .then(m => m.OpeningPageModule)
+  }, 
+  { 
+    path: 'materiais-didaticos',
+    loadChildren: () => import('./components/courseware-page/courseware-page.module')
+      .then(m => m.CoursewarePageModule)
+  }, 
+  { 
+    path: 'ver-todos-materiais',
+    loadChildren: () => import('./components/all-design-page/all-design-page.module')
+      .then(m => m.AllDesignPageModule)
+  }, 
   { path: '**', redirectTo: 'login' }
 ];
 
