@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, catchError } from 'rxjs/operators'
 import { Observable } from 'rxjs'
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment.development';
 
 
 @Injectable({
@@ -26,7 +26,9 @@ export class AuthenticationService {
         if (err.status == 401) {
           throw "Verifique seu login."
         }
-
+        if (err.status == 500) {
+          throw 'Login não autorizado.';
+        }
         throw 'Falha ao efetuar login.';
       })
     );

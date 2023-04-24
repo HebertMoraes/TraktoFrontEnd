@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { DesignData } from '../entities/design-data';
+import { environment } from '../../environments/environment.development';
 import { AllDesignData } from '../entities/all-design-data';
 
 @Injectable({

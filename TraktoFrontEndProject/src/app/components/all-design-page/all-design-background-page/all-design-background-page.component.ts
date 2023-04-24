@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DesignData } from 'src/app/entities/design-data';
-import { DesignService } from 'src/app/services/design.service';
-import { environment } from 'src/environments/environment.development';
+import { DesignService } from '../../../services/design.service';
+import { environment } from '../../../../environments/environment.development';
 
 @Component({
   selector: 'app-all-design-background-page',
