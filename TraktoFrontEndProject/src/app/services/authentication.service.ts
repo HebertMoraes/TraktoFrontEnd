@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, catchError } from 'rxjs/operators'
 import { Observable } from 'rxjs'
@@ -20,8 +20,13 @@ export class AuthenticationService {
       map((dataResponse) => {
         this.setTokenLocalStorage(dataResponse);
       }),
-      catchError((err) => {
+      catchError((err: HttpErrorResponse) => {
         this.removerTokenLocalStorage();
+        
+        if (err.status == 401) {
+          throw "Verifique seu login."
+        }
+
         throw 'Falha ao efetuar login.';
       })
     );
