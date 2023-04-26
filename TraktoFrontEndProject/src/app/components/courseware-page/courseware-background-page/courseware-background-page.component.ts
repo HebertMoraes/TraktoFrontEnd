@@ -14,7 +14,7 @@ export class CoursewareBackgroundPageComponent {
   designsThumbsToShow!: DesignData[];
 
   constructor(
-    private designService: DesignService,
+    public designService: DesignService,
     private router: Router) {
 
   }

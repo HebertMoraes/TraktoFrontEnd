@@ -14,8 +14,8 @@ export class LoginFrameComponent {
   formLogin!: FormGroup;
 
   constructor(
-    private router: Router,
-    private authService: AuthenticationService,
+    public router: Router,
+    public authService: AuthenticationService,
     private formBuilder: FormBuilder, 
     private toastr: ToastrService) {
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DesignData } from 'src/app/entities/design-data';
 import { DesignService } from '../../../services/design.service';
 import { environment } from '../../../../environments/environment.development';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-all-design-background-page',
@@ -12,7 +13,7 @@ export class AllDesignBackgroundPageComponent {
 
   designsThumbsToShow!: DesignData[];
 
-  constructor(private designService: DesignService) {
+  constructor(public designService: DesignService, public toastr: ToastrService) {
 
   }
 
@@ -26,7 +27,7 @@ export class AllDesignBackgroundPageComponent {
         this.designsThumbsToShow = res.data;
       },
       error: (err) => {
-        console.log(err);
+        this.toastr.error(err);
       }
     });
   }

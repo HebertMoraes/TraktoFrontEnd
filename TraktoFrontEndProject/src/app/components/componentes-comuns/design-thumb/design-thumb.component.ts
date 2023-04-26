@@ -15,7 +15,7 @@ export class DesignThumbComponent {
 
   @Output() goToEdit: EventEmitter<string> = new EventEmitter<string>();
 
-  numberSlidesToShow!: number;
+  public numberSlidesToShow!: number;
 
   ngOnInit() {
 

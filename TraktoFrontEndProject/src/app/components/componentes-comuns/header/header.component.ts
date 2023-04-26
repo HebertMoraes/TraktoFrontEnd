@@ -18,7 +18,7 @@ export class HeaderComponent {
   @Input() iconProfilePath!: string;
   @Input() icon4Path!: string;
 
-  constructor(private router: Router) {
+  constructor(public router: Router) {
 
   }
 

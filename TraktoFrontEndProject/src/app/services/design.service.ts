@@ -32,12 +32,9 @@ export class DesignService {
 
     return this.http.get<AllDesignData>(urlToSend, { responseType: 'json' }).pipe(
       catchError((err) => {
+        console.log(err);
         throw 'Ops algo deu errado';
       })
     )
-  }
-
-  getSingleDesignById(id: string) {
-
   }
 }

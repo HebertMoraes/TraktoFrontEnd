@@ -20,4 +20,10 @@ describe('OpeningBackgroundPageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('goToCoursewarePage', () => {
+    var routerNavigateByUrlSpy = jest.spyOn(component.router, 'navigateByUrl');
+    component.goToCoursewarePage();
+    expect(routerNavigateByUrlSpy).toBeCalled();
+  });
 });
